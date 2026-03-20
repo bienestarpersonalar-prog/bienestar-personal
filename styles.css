@@ -383,10 +383,17 @@ footer {
 /* =======================
    RESPONSIVE
 ======================= */
-@media (max-width: 768px) {
-  .nav-logo { height: 45px; width: 45px; }
-  .cards { grid-template-columns: 1fr; }
-  .hero h1 { font-size: 1.8rem; }
+@media (max-width: 1100px) {
+  .cards-horizontal {
+    grid-template-columns: 1fr;
+  }
+  .pilar-horizontal, .beneficio-horizontal {
+    grid-template-columns: 180px 1fr; /* Más espacio para el título en 1 columna */
+  }
+  .pilar-titulo, .beneficio-titulo {
+    width: 100%;
+    padding: 12px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -394,20 +401,35 @@ footer {
   .cards { grid-template-columns: 1fr; }
   .hero h1 { font-size: 2rem; }
 
+  /* 2. REPARACIÓN DEL MENÚ (Scroll Horizontal Limpio) */
+  nav {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important; /* Permite deslizar con el dedo */
+    background: #fff; /* O el color de fondo de tu menú */
+    border-bottom: 1px solid #eee;
+  }
+
   nav ul {
-    flex-direction: column; /* Las opciones se ponen una debajo de otra */
-    gap: 10px;              /* Espacio entre botones para que no se encimen */
-    padding: 15px 0;
-    text-align: center;
-    width: 100%;            /* Ocupa todo el ancho disponible */
+    display: flex !important;
+    flex-direction: row !important; /* Obliga a que estén uno al lado del otro */
+    flex-wrap: nowrap !important;   /* Prohíbe que se caigan abajo */
+    justify-content: flex-start !important;
+    gap: 20px !important;
+    padding: 15px !important;
+    margin: 0 !important;
+    list-style: none !important;
+    width: max-content !important; /* Importante: obliga a la lista a ser tan ancha como sus textos */
   }
 
   nav li {
-    width: 100%;            /* Los botones se estiran para ser más fáciles de tocar */
+    flex: 0 0 auto !important; /* Impide que las palabras se amontonen */
+    display: inline-block !important;
   }
 
   nav a {
-    display: block;         /* Hace que todo el ancho del botón sea clickeable */
-    padding: 10px;
+    text-decoration: none;
+    white-space: nowrap !important; /* Evita que el texto salte de línea */
+    font-size: 0.95rem;
   }
 }
