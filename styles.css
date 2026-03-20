@@ -387,33 +387,6 @@ footer {
   .nav-logo { height: 45px; width: 45px; }
   .cards { grid-template-columns: 1fr; }
   .hero h1 { font-size: 1.8rem; }
-
-  /* --- AJUSTE DE NAVEGACIÓN SEGURO --- */
-  nav {
-    width: 100%;
-    overflow-x: auto; /* Permite deslizar si no entran las opciones */
-    -webkit-overflow-scrolling: touch; /* Suavidad en iPhone */
-  }
-
-  nav ul {
-    display: flex;
-    flex-direction: row; /* Mantenemos la línea horizontal */
-    flex-wrap: nowrap;   /* PROHIBIDO que bajen a la siguiente línea */
-    justify-content: flex-start;
-    gap: 20px;
-    padding: 10px 15px;
-    margin: 0;
-    list-style: none;
-  }
-
-  nav li {
-    flex: 0 0 auto; /* No permite que las palabras se achiquen o se corten */
-  }
-
-  /* Ocultar la barra de scroll para que se vea más limpio */
-  nav::-webkit-scrollbar {
-    display: none;
-  }
 }
 
 @media (max-width: 768px) {
