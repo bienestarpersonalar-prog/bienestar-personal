@@ -1,0 +1,403 @@
+/* =======================
+   RESET Y TIPOGRAFÍA
+======================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; 
+}
+
+
+body {
+  padding-top: 60px;
+  line-height: 1.6;
+  background-color: #f9fafb;
+}
+
+/* =======================
+   NAVBAR Y HEADER
+======================= */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: #1e3a8a;
+  z-index: 1000;
+  height: 80px; 
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo-container {
+  flex-shrink: 0;
+}
+
+.nav-logo {
+  height: 60px; 
+  width: 60px;
+  border-radius: 50%; 
+  object-fit: cover;
+  display: block;
+  border: 2px solid white;
+  transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+  transform: scale(1.05);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 12px; 
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px; 
+  font-weight: 500;
+  padding: 8px 10px;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.menu-toggle {
+  display: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* =======================
+   HERO (Pantalla de Inicio)
+======================= */
+.hero {
+  height: 100vh;
+  background: url('img/fondo.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero-ubicacion {
+  font-size: 1.1rem !important;
+  color: #e0e0e0;
+  margin-bottom: 2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-ubicacion strong {
+  color: #fff;
+}
+
+.hero-frase {
+  font-size: 1.8rem; 
+  font-weight: 600;
+  margin-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  padding-top: 20px;
+  display: inline-block;
+}
+
+.hero-subfrase {
+  font-size: 1.3rem;
+  margin-top: 10px;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* =======================
+   SECCIONES GENERALES
+======================= */
+.section {
+  padding: 15px 10% 60px 10%; 
+}
+
+.section h2 {
+  background-color: #3b82f6;
+  color: white;
+  padding: 12px 0;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 1.6rem;
+}
+
+/* =======================
+   CARDS HORIZONTALES (Pilares y Beneficios - AJUSTE DE ALTURA)
+======================= */
+.cards-horizontal {
+  display: grid; /* Cambiado de flex a grid */
+  grid-template-columns: repeat(2, 1fr); /* Crea 2 columnas iguales */
+  gap: 15px; /* Espacio entre columnas y filas */
+}
+
+.pilar-horizontal,
+.beneficio-horizontal {
+  display: grid;
+  grid-template-columns: 140px 1fr; /* Reducimos el ancho del título para que quepan bien dos cards */
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  align-items: stretch; /* Asegura que título y descripción tengan la misma altura */
+}
+
+.pilar-titulo, .beneficio-titulo {
+  margin: 0;
+  padding: 10px 15px;
+  font-weight: 600;
+  font-size: 0.95rem; /* Ajustamos un poco el tamaño para las 2 columnas */
+  color: #1e3a8a;
+  background: #e2e8f0; 
+  text-align: left;
+  display: flex; /* Volvemos a flex para centrar el texto verticalmente */
+  align-items: center;
+}
+
+.pilar-descripcion,
+.beneficio-descripcion {
+  padding: 10px 15px;
+  background: #dbeafe; 
+  font-size: 0.9rem; /* Ajustamos un poco el tamaño para que el texto fluya mejor */
+  line-height: 1.4;
+  color: #2d3748;
+  text-align: left;
+  border-left: 1px solid rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+}
+
+#planes .divisor-card {
+  margin: 25px auto 15px auto; /* Aumenta el espacio arriba (25px) y abajo (15px) */
+  border-top: 1px solid #60a5fa; /* Mantiene tu color de línea azul */
+  opacity: 0.4; /* La hace un poco más sutil */
+}
+
+/* =======================
+   SECCION PLANES
+======================= */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  justify-items: center;
+  margin-top: 40px;
+}
+
+.card {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  background: white;
+  transition: transform 0.3s ease;
+}
+
+.card-header {
+  background-color: #e0f2fe;
+  text-align: center;
+  padding: 12px 0;
+  font-weight: 600;
+  color: #1e3a8a;
+  font-size: 0.95rem; 
+  border-bottom: 1px solid #60a5fa;
+}
+
+.card-body {
+  padding: 25px;
+  text-align: center;
+}
+
+.plan-item-titulo {
+  font-weight: bold;       /* Pone el texto en negrita */
+  font-size: 1.15 rem;
+  margin-bottom: 12px;     /* Aumenta el espacio con el siguiente renglón */
+  display: block;          /* Asegura que el margen funcione correctamente */
+}
+
+
+/* Ajuste para que card-resaltado no pise el margen si van juntos */
+.card-body p.plan-item-titulo {
+  margin-bottom: 12px !important;
+}
+
+#planes .card-body p {
+  font-size: 0.95rem; /* Tamaño base reducido */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.intro-pilares {
+  margin-bottom: 30px; /* Separa el texto de bienvenida del primer artículo */
+}
+
+
+.extra-text .linea {
+  display: block;      /* Fuerza a que cada frase ocupe todo el ancho y pase a la siguiente línea */
+  margin-bottom: 10px; /* Agrega un pequeño espacio entre cada ítem para que no estén pegados */
+}
+
+#planes .extra-text {
+  margin-top: 35px; /* Crea el espacio de un renglón generoso antes de las notas */
+  display: block;   /* Asegura que el contenedor respete el margen */
+  border-top: 1px solid #e2e8f0; /* Opcional: una línea muy sutil para separar visualmente */
+  padding-top: 15px;
+  font-size: 0.75rem;   /* Achica la letra (el estándar suele ser 1rem) */
+ }
+
+/* =======================
+   FAQ - PREGUNTAS FRECUENTES
+======================= */
+#faq details {
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+#faq summary {
+  list-style: none;
+  padding: 15px 20px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  cursor: pointer;
+  position: relative;
+}
+
+#faq details p {
+  margin: 0;
+  padding: 15px 25px 20px 40px;
+  line-height: 1.6;
+  background: #dbeafe;
+  font-size: 0.98rem;
+  color: #2d3748;
+}
+
+#faq details summary::after {
+  content: "+";
+  position: absolute;
+  right: 20px;
+}
+
+#faq details[open] summary::after {
+  content: "−";
+}
+
+/* =======================
+   CONTACTO Y PLANIFICACIÓN
+======================= */
+.intro-planificacion {
+  margin-bottom: 35px; /* Crea el espacio de un renglón antes de los horarios */
+  display: block;      /* Asegura que el margen se aplique correctamente */
+  line-height: 1.6;
+}
+
+/* Opcional: un ajuste para que los bloques no estén tan pegados entre sí */
+.bloque-planificacion {
+  margin-bottom: 25px;
+}
+
+
+.contacto-texto { text-align: center; margin: 20px 0; }
+.contacto-links-container { text-align: center; }
+.email-link {
+  display: inline-flex;
+  align-items: center;
+  color: #1e3a8a;
+  text-decoration: none;
+  border-bottom: 2px solid #3b82f6;
+  gap: 10px;
+}
+
+.titulo-plan { color: #1e3a8a; margin-bottom: 15px; font-size: 1.2rem; }
+.lista-plan { margin-left: 25px; margin-bottom: 20px; }
+.lista-plan li { margin-bottom: 8px; }
+
+/* =======================
+   FOOTER
+======================= */
+footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media (max-width: 1100px) {
+  .cards-horizontal {
+    grid-template-columns: 1fr;
+  }
+  .pilar-horizontal, .beneficio-horizontal {
+    grid-template-columns: 180px 1fr; /* Más espacio para el título en 1 columna */
+  }
+  .pilar-titulo, .beneficio-titulo {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-logo { height: 45px; width: 45px; }
+  .cards { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 2rem; }
+}
