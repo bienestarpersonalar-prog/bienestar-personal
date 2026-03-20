@@ -400,4 +400,21 @@ footer {
   .nav-logo { height: 45px; width: 45px; }
   .cards { grid-template-columns: 1fr; }
   .hero h1 { font-size: 2rem; }
+
+  nav ul {
+    flex-direction: column; /* Las opciones se ponen una debajo de otra */
+    gap: 10px;              /* Espacio entre botones para que no se encimen */
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;            /* Ocupa todo el ancho disponible */
+  }
+
+  nav li {
+    width: 100%;            /* Los botones se estiran para ser más fáciles de tocar */
+  }
+
+  nav a {
+    display: block;         /* Hace que todo el ancho del botón sea clickeable */
+    padding: 10px;
+  }
 }
