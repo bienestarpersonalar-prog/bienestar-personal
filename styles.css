@@ -397,39 +397,58 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .nav-logo { height: 45px; width: 45px; }
-  .cards { grid-template-columns: 1fr; }
-  .hero h1 { font-size: 2rem; }
+  /* 1. Recuperamos el contenedor principal (Header) */
+  header {
+    display: flex !important;
+    flex-direction: row !important; /* Logo y menú en la misma línea */
+    align-items: center !important;
+    justify-content: space-between !important;
+    background-color: #004a99 !important; /* AJUSTÁ ACÁ EL AZUL EXACTO DE TU MARCA */
+    padding: 10px 15px !important;
+    position: sticky; /* Para que te siga al bajar */
+    top: 0;
+    z-index: 1000;
+  }
 
-  /* 2. REPARACIÓN DEL MENÚ (Scroll Horizontal Limpio) */
+  /* 2. El Logo al lado del menú */
+  .nav-logo { 
+    height: 40px !important; 
+    width: 40px !important; 
+    flex-shrink: 0; /* Que no se achique */
+  }
+
+  /* 3. El Menú deslizable a la derecha del logo */
   nav {
-    display: block !important;
-    width: 100% !important;
-    overflow-x: auto !important; /* Permite deslizar con el dedo */
-    background: #fff; /* O el color de fondo de tu menú */
-    border-bottom: 1px solid #eee;
+    flex-grow: 1;
+    overflow-x: auto !important;
+    margin-left: 15px; /* Separación del logo */
+    -webkit-overflow-scrolling: touch;
   }
 
   nav ul {
     display: flex !important;
-    flex-direction: row !important; /* Obliga a que estén uno al lado del otro */
-    flex-wrap: nowrap !important;   /* Prohíbe que se caigan abajo */
-    justify-content: flex-start !important;
-    gap: 20px !important;
-    padding: 15px !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 15px !important;
+    padding: 5px 0 !important;
     margin: 0 !important;
     list-style: none !important;
-    width: max-content !important; /* Importante: obliga a la lista a ser tan ancha como sus textos */
+    width: max-content !important;
   }
 
-  nav li {
-    flex: 0 0 auto !important; /* Impide que las palabras se amontonen */
-    display: inline-block !important;
-  }
-
+  /* 4. Estilo de los textos del menú para que contrasten con el azul */
   nav a {
+    color: #ffffff !important; /* Texto blanco sobre el fondo azul */
     text-decoration: none;
-    white-space: nowrap !important; /* Evita que el texto salte de línea */
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap !important;
   }
+
+  /* 5. Otros ajustes que ya tenías */
+  .cards { grid-template-columns: 1fr !important; }
+  .hero h1 { font-size: 1.8rem !important; margin-top: 20px; }
+  
+  /* Ocultar barra de scroll para estética */
+  nav::-webkit-scrollbar { display: none; }
 }
