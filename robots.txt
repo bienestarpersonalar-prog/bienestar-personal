@@ -1,3 +1,4 @@
 User-agent: *
-Disallow: /admin/
-Sitemap: https://tusitio.com/sitemap.xml
+Allow: /
+# Indica la ubicación de tu mapa del sitio para los buscadores
+Sitemap: https://bienestar-personal-nu.vercel.app/sitemap.xml
