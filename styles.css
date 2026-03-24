@@ -356,13 +356,26 @@ header {
 
 .contacto-texto { text-align: center; margin: 20px 0; }
 .contacto-links-container { text-align: center; }
+/* Estilo base de los links de contacto */
+/* --- Efecto de Resaltado en Contactos --- */
+
 .email-link {
-  display: inline-flex;
-  align-items: center;
-  color: #1e3a8a;
-  text-decoration: none;
-  border-bottom: 2px solid #3b82f6;
-  gap: 10px;
+  transition: all 0.3s ease; /* Hace que el cambio sea suave, no brusco */
+  padding: 4px 8px;          /* Espacio interno para que el fondo no quede pegado al texto */
+  border-radius: 4px;        /* Redondea las esquinas del resaltado */
+}
+
+.email-link:hover {
+  background-color: #dbeafe; /* El celeste claro que ya usás en tu web */
+  color: #3b82f6;           /* Cambia el azul oscuro por el azul vibrante */
+  transform: translateX(5px); /* Desplaza el link un poquito a la derecha al tocarlo */
+  border-bottom-color: #3b82f6; /* Resalta la línea de abajo */
+}
+
+/* Efecto opcional para que el icono se agrande un poquito al posarse */
+.email-link:hover i {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
 }
 
 .titulo-plan { color: #1e3a8a; margin-bottom: 15px; font-size: 1.2rem; }
