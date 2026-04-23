@@ -292,6 +292,10 @@ header {
   margin-bottom: 10px; /* Agrega un pequeño espacio entre cada ítem para que no estén pegados */
 }
 
+.extra-text {
+  margin-top: 1rem;
+}
+
 #planes .extra-text {
   margin-top: 35px; /* Crea el espacio de un renglón generoso antes de las notas */
   display: block;   /* Asegura que el contenedor respete el margen */
